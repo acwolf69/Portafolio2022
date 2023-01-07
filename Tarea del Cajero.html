@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title> Cajero </title>
+    </head>
+    <body>
+        <script>
+            function contraseñan() {
+                let a;
+                a=prompt("haga una contraseña.");
+                return (a);
+            }
+            function ss(num1,num2) {
+                let b;
+                b=num1+num2;
+                return (b);    
+            }
+            function rs(num1,num2) {
+                if (num1>=num2) {
+                    let c;
+                    c=num1-num2;
+                    return (c);
+                
+                } else {
+                    let c;
+                    prompt("No posee saldo para retirar los fondos.");
+                    c=num1;
+                    return (c);
+                }
+                
+            }
+            
+            let bienvenida,contraseñaa, opcion, sa, x;
+            bienvenida=prompt("Bienvenido  cajero automático, para continuar, necesita crear una contras3ña.");
+            contraseñaa= contraseñan();
+            sa=0;
+            do {
+                menu="Elija una opción para elegir 1- Retiro. 2- Deposito. 3- Consulta de saldo. 4- Cambio de contraseña."
+            opcion=prompt(menu);
+            
+            if (opcion==1) {
+                if (sa>0) {
+                    let d;
+                    d=parseInt(prompt("Introduzca cantidad a retirar."));
+                    sa= rs (sa,d);
+                    
+                } else {
+
+                    prompt("No posee saldo para retirar los fondos.");
+                }
+                
+            } else if (opcion==2) {
+                let e;
+                e=parseInt(prompt("Introduzca cantidad a depositar."));
+                sa= ss (sa,e);
+            } else if (opcion==3) {
+                prompt(sa);
+                
+            } else if (opcion==4) {
+                let contraseñaac;
+                contraseñaac=prompt("Para cambiar la contraseña, es necesario que introduzca su contraseña actual, a continuación, introduzca su contraseña.");
+                if (contraseñaac==contraseñaa) {
+                    contraseñaa=contraseñan();
+                    
+                } else {
+                    prompt("Contraseña incorrecta, por favor introduzca una contraseña correcta");
+                }
+
+                
+            } else {
+                prompt("Escoja una opción válida");
+            }
+            x=prompt("¿Desea hacer algún otro procedimiento? 1=Si 2=No");
+
+            }while (x==1);
+            document.write("vuelva pronto.");
+            
+        </script>
+    </body>
+</html>
